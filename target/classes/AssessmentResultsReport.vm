@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #parse("CommonStyles.vm")
+
+            .UnsubmittedStudent{
+                float:left;
+                border: 0px solid #ffffff;
+                border-radius: 4px;
+                background-color: #BEE6E6;
+                margin: 5px;
+                padding: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        #foreach($assessItem in $reportModel.asrAssessmentItems)
+        <h2>$assessItem.name</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Student</th>
+                ## Set the table header as the assessment item sections
+                #foreach($assessItemSection in $assessItem.asrAssessmentItemSections)
+                <th title="${assessItemSection.curriculumItemCode}, ${assessItemSection.profStrandCode}">${assessItemSection.name}<br/>${assessItemSection.totalMarks} Marks</th>
+                #end
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                #foreach($student in $assessItem.asrStudents)
+                    #if($student.submitted($assessItem))
+                    <tr> 
+                        <td>${student.firstName} ${student.lastName}</td>
+                        #foreach($assessItemSection in $assessItem.asrAssessmentItemSections)                         
+                            #set($result = $student.getResultForSection($assessItemSection))
+                            #if(! $result)
+                            ##null case - shouldnt happen
+                                <td>n/a</td>  
+                            #elseif($result.completionStatus.toString() == "N")
+                                <td style="background-color:#F00A00;">N</td>
+                            #elseif($result.completionStatus.toString() == "R")
+                                <td>R</td>                            
+                            #else
+                            <td style="background-color:${result.getColorValue()}" title="${result.marksAttained} marks">${result.percentAttained}%</td>
+                            #end
+                        #end
+                        <td>${student.getPercentAttainedForAssessmentItem($assessItem)}%</td>
+                    </tr>
+                    #end
+                #end
+            </tbody>
+         </table>
+        <div style="clear:both; overflow: hidden;">
+        <h3>Unsubmitted from:</h3>
+            #foreach($student in $assessItem.asrStudents)
+                #if(! $student.submitted($assessItem))
+                    <div class="UnsubmittedStudent">
+                        ${student.firstName} ${student.lastName}
+                    </div>
+                #end
+            #end
+        </div>
+         #end
+    </body>
+</html>

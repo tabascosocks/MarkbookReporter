@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #parse("CommonStyles.vm")
+            .contentStrand {
+                font-weight: bold;
+            }
+            .assessItemSec{
+                float: left;
+                background-color: #BEE6E6;
+                border: 1px solid #BEE6E6;
+                border-radius: 6px;
+                margin: 2px 2px 2px 2px;
+                padding: 2px 2px 2px 2px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Curriculum Assessment Report</h1>
+        <table>
+            <tr>
+                <th>&nbsp;</th>
+            ## Set the table header as the prof strands
+            #foreach($profStrand in $reportModel.proficiencyStrands)
+                <th title="${profStrand.description}">$profStrand.name</th>
+            #end
+            </tr>
+            ## Track the current content strand, if its different, then create a special header
+            #set($contentStrand = "")
+            #foreach($curricItem in $reportModel.curriculumItems)
+                #if($contentStrand != $curricItem.contentStrand)
+                    #set($contentStrand = $curricItem.contentStrand)
+                    <tr>
+                        <td class="contentStrand" colspan="${reportModel.getTotalTableColumns()}">${contentStrand}</td>                
+                    </tr>
+                #end
+                #if($curricItem.display())
+                    <tr>
+                        <td title="${curricItem.description}">${curricItem.description} (${curricItem.name})</td>
+                    #foreach($profStrand in $reportModel.proficiencyStrands)
+                        <td>
+                            #foreach($assessItemSec in $reportModel.assessmentItemSections)
+                                #if($assessItemSec.curriculumItems.contains($curricItem) && $assessItemSec.proficiencyStrands.contains($profStrand))
+                                    <div class="assessItemSec">
+                                        <span style="font-weight: bold;">${assessItemSec.name} in ${assessItemSec.assessmentItem.name} </span><br />
+                                        ${assessItemSec.totalMarks} marks <br />
+                                        #if(${assessItemSec.hasTextBookRef()})
+                                        ${assessItemSec.textBookRef} <br />
+                                        #end
+                                    </div>
+                                #end
+                            #end
+                        </td>
+                    #end
+                    </tr>
+                #end
+            #end
+         </table>
+    </body>
+</html>

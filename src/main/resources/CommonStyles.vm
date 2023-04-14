@@ -1,0 +1,42 @@
+            /*
+            #####  Color Palette by Paletton.com
+            #####  Palette URL: http://paletton.com/#uid=13i0u0kllll5-T5dtuGtdb+Kj2E
+
+
+            *** Primary color:
+
+               shade 0 = #226666 = rgb( 34,102,102) = rgba( 34,102,102,1) = rgb0(0.133,0.4,0.4)
+               shade 1 = #BEE6E6 = rgb(190,230,230) = rgba(190,230,230,1) = rgb0(0.745,0.902,0.902)
+               shade 2 = #559393 = rgb( 85,147,147) = rgba( 85,147,147,1) = rgb0(0.333,0.576,0.576)
+               shade 3 = #053939 = rgb(  5, 57, 57) = rgba(  5, 57, 57,1) = rgb0(0.02,0.224,0.224)
+               shade 4 = #000D0D = rgb(  0, 13, 13) = rgba(  0, 13, 13,1) = rgb0(0,0.051,0.051)
+            */
+            body{
+                font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+                font-size: 1em;
+            }
+
+            h2{
+                font-size: 1.6em;
+                text-align: center;
+            }   
+            h3{
+                font-size: 1.4em;
+            }
+            table {
+                color:#000D0D;
+                border-width: 1px;
+                border-color: #226666;
+                border-collapse: collapse;
+            }
+            table th {
+                color: #ffffff;
+                border: 1px solid #226666;
+                padding: 8px;
+                background-color: #053939;
+            }
+            table td {
+                border: 1px solid #226666;
+                padding: 8px;
+                background-color: #ffffff;
+            }

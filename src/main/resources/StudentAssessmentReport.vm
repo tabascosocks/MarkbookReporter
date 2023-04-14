@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #parse("CommonStyles.vm")
+        </style>
+    </head>
+    <body>
+        #foreach($student in $reportModel.students)
+        <h2>${student.name}</h2>
+        <table>
+            <thead>
+            <tr>
+                <th style="min-width: 80px;">Assessment Item</th>
+                <th>Marks Achieved</th>  
+                <th style="min-width: 80px;">% Result</th>
+            </tr>
+            </thead>
+            <tbody>
+                #foreach($assessItem in $student.assessmentItems)
+                    <tr>
+                        <td>$assessItem.name</td>
+                        <td>#if($assessItem.completionStatus.toString() == "A")
+                                #foreach($section in $assessItem.assessmentItemSections) 
+                                    #if($section.completionStatus.toString() == "R")
+                                        <del>${section}</del>
+                                    #else
+                                        ${section} 
+                                    #end
+                                    #if( $foreach.hasNext ),#end 
+                                #end
+                            #elseif($assessItem.completionStatus.toString() == "N")
+                                Not Submitted
+                            #elseif($assessItem.completionStatus.toString() == "R")
+                                Not Assessed
+                            #end
+                        </td>
+                        <td>
+                            #if($assessItem.completionStatus.toString() == "A")
+                                ${assessItem.getPercentAttained()}%
+                            #else
+                                N/A
+                            #end
+                        </td>
+                    </tr>
+                #end
+            </tbody>
+         </table>
+         #end
+    </body>
+</html>

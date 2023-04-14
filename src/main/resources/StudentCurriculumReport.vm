@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #parse("CommonStyles.vm")
+            .contentStrand {
+                font-weight: bold;
+            }
+            .minorCurricItem{
+                opacity: 0.6;
+                font-style: italic;
+            }
+            .StudentReport{
+                /* Printing support */
+                page-break-after: always;
+            }
+            h3{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        #foreach($student in $reportModel.students)
+        <div class="StudentReport">
+            <h2>$student.name</h2>
+            <h3>
+            #foreach($assessItemName in $student.assessmentItemNames)
+                ${assessItemName} #if( $foreach.hasNext ), #end
+            #end
+            </h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                    ## Set the table header as the prof strands
+                    #foreach($profStrand in $reportModel.proficiencyStrands)
+                        <th title="${profStrand.description}">$profStrand.name</th>
+                    #end
+                    </tr>
+                </thead>
+                <tbody>
+                ## Track the current content strand, if its different, then create a special header
+                #set($contentStrand = "")
+                #foreach($curricItem in $reportModel.curriculumItems)
+                    #if($contentStrand != $curricItem.contentStrand)
+                        #set($contentStrand = $curricItem.contentStrand)
+                        <tr>
+                            <td class="contentStrand" colspan="${reportModel.getTotalTableColumns()}">${contentStrand}</td>                
+                        </tr>
+                    #end
+                    #if($curricItem.display())
+                        <tr#if($curricItem.displayAsMinorItem()) class="minorCurricItem" #end>
+                            <td title="${curricItem.description}">${curricItem.description}</td>
+                        #foreach($profStrand in $reportModel.proficiencyStrands)
+
+                            ##Locate the student grade to which this item/prof strand applies
+                            #set($studentGrade = $student.getGradeForItemAndProficiency($curricItem, $profStrand))
+                            <td style="background-color:${studentGrade.getColorValue()}" title="#foreach($assessItem in $studentGrade.assessmentItemResults) #if($assessItem.completionStatus == "A") ${assessItem} #elseif($assessItem.completionStatus == "N") (${assessItem}) #end #if( $foreach.hasNext ), #end #end">
+                            #if($studentGrade.getGradeStatus().toString() == "NAS")
+                                Not Assessed
+                            #elseif($studentGrade.getGradeStatus().toString() == "NAT")
+                                Not Attempted
+                            #else
+                                ${studentGrade.percentAttained}%
+                            #end
+                            </td>
+                        #end
+                    #end
+                    </tr>
+                #end
+                </tbody>
+             </table>
+         </div>
+         #end
+    </body>
+</html>
