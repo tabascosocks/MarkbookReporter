@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <NonVisualComponents>
+    <Component class="markbookreporterui.view.MarkbookPanelBean" name="markbookPanelBean">
+    </Component>
+  </NonVisualComponents>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,3,0,0,2,-20"/>
+  </AuxValues>
+
+  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="fileCurriculumPanel">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+          <BorderConstraints direction="Center"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="markbookFilenameTextField" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="refreshMarkbookDataButton" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="curriculumNameTextField" min="-2" pref="150" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Component id="reportConfigsTabbedPane" alignment="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="markbookFilenameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="curriculumNameTextField" min="-2" max="-2" attributes="0"/>
+                      <Component id="refreshMarkbookDataButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="reportConfigsTabbedPane" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Markbook File:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="markbookFilenameTextField">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+          <BindingProperties>
+            <BindingProperty name="text" source="markbookPanelBean" sourcePath="${markBookFilename}" target="markbookFilenameTextField" targetPath="text" updateStrategy="0" immediately="false">
+              <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+            </BindingProperty>
+          </BindingProperties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Curriculum:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="curriculumNameTextField">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+          <BindingProperties>
+            <BindingProperty name="text" source="markbookPanelBean" sourcePath="${curriculumTitle}" target="curriculumNameTextField" targetPath="text" updateStrategy="0" immediately="false">
+              <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+            </BindingProperty>
+          </BindingProperties>
+        </Component>
+        <Container class="javax.swing.JTabbedPane" name="reportConfigsTabbedPane">
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="asrConfigPanel">
+              <Properties>
+                <Property name="name" type="java.lang.String" value="ASRConfig" noResource="true"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Assessment Results">
+                    <Property name="tabTitle" type="java.lang.String" value="Assessment Results"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="asrSelecteditemsScrollPane" alignment="0" pref="404" max="32767" attributes="0"/>
+                                      <Component id="asrUseSelectedItemsCheckBox" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="180" pref="180" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="asrUseSelectedItemsCheckBox" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="asrSelecteditemsScrollPane" pref="317" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jLabel3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="This report gives an overview of assesment result percentages, group by assessment item."/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="asrUseSelectedItemsCheckBox">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Use only selected Assessment Items"/>
+                  </Properties>
+                  <BindingProperties>
+                    <BindingProperty name="selected" source="markbookPanelBean" sourcePath="${asrSelectedAssessmentItemsOnly}" target="asrUseSelectedItemsCheckBox" targetPath="selected" updateStrategy="0" immediately="false"/>
+                  </BindingProperties>
+                </Component>
+                <Container class="javax.swing.JScrollPane" name="asrSelecteditemsScrollPane">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JList" name="asrSelectedItemsList">
+                      <BindingProperties>
+                        <BindingProperty name="elements" source="markbookPanelBean" sourcePath="${assessmentItemNames}" target="asrSelectedItemsList" targetPath="elements" updateStrategy="1" immediately="false"/>
+                        <BindingProperty name="selectedElements" source="markbookPanelBean" sourcePath="${asrSelectedAssessmentItemNames}" target="asrSelectedItemsList" targetPath="selectedElements" updateStrategy="0" immediately="false">
+                          <BindingParameter name="IGNORE_ADJUSTING" value="N"/>
+                        </BindingProperty>
+                        <BindingProperty name="enabled" source="markbookPanelBean" sourcePath="${asrSelectedAssessmentItemsOnly}" target="asrSelectedItemsList" targetPath="enabled" updateStrategy="0" immediately="false"/>
+                      </BindingProperties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Component class="javax.swing.JLabel" name="jLabel9">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Assessment Items:"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="carConfigPanel">
+              <Properties>
+                <Property name="name" type="java.lang.String" value="CARConfig" noResource="true"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Curriculum Assessment">
+                    <Property name="tabTitle" type="java.lang.String" value="Curriculum Assessment"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="carShowAllProfStrandsCheckBox" min="-2" max="-2" attributes="0"/>
+                              <Component id="carShowAllCurrItemsCheckBox" min="-2" max="-2" attributes="0"/>
+                              <Component id="carPushUpChildCurrResultsCheckBox" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="242" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="carPushUpChildCurrResultsCheckBox" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="carShowAllCurrItemsCheckBox" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="carShowAllProfStrandsCheckBox" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="282" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jLabel4">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="This report gives an overview of what has been assessed in regard to the curriculum."/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="carPushUpChildCurrResultsCheckBox">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Push up child curriculum resuts"/>
+                  </Properties>
+                  <BindingProperties>
+                    <BindingProperty name="selected" source="markbookPanelBean" sourcePath="${carPushUpChildCurriculumResults}" target="carPushUpChildCurrResultsCheckBox" targetPath="selected" updateStrategy="0" immediately="false"/>
+                  </BindingProperties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="carShowAllCurrItemsCheckBox">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Show *all* curriculum items"/>
+                  </Properties>
+                  <BindingProperties>
+                    <BindingProperty name="selected" source="markbookPanelBean" sourcePath="${carUseFullCurriculumItems}" target="carShowAllCurrItemsCheckBox" targetPath="selected" updateStrategy="0" immediately="false"/>
+                  </BindingProperties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="carShowAllProfStrandsCheckBox">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Show *all* proficiency strands"/>
+                  </Properties>
+                  <BindingProperties>
+                    <BindingProperty name="selected" source="markbookPanelBean" sourcePath="${carFullProficiencyStrands}" target="carShowAllProfStrandsCheckBox" targetPath="selected" updateStrategy="0" immediately="false"/>
+                  </BindingProperties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="sarConfigPanel">
+              <Properties>
+                <Property name="name" type="java.lang.String" value="SARConfig" noResource="true"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Student Assessment">
+                    <Property name="tabTitle" type="java.lang.String" value="Student Assessment"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="sarSelectedStudentsCheckBox" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="jScrollPane2" alignment="0" pref="404" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="327" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="sarSelectedStudentsCheckBox" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jScrollPane2" pref="317" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jLabel5">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="This report gives an overview of student assessment percentages for each student."/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel11">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Students:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="sarSelectedStudentsCheckBox">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Use only selected Students"/>
+                  </Properties>
+                  <BindingProperties>
+                    <BindingProperty name="selected" source="markbookPanelBean" sourcePath="${sarSelectedStudentsOnly}" target="sarSelectedStudentsCheckBox" targetPath="selected" updateStrategy="0" immediately="false"/>
+                  </BindingProperties>
+                </Component>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JList" name="sarSelectedStudentsList">
+                      <BindingProperties>
+                        <BindingProperty name="elements" source="markbookPanelBean" sourcePath="${studentNames}" target="sarSelectedStudentsList" targetPath="elements" updateStrategy="0" immediately="false"/>
+                        <BindingProperty name="selectedElements" source="markbookPanelBean" sourcePath="${sarSelectedStudentNames}" target="sarSelectedStudentsList" targetPath="selectedElements" updateStrategy="0" immediately="false">
+                          <BindingParameter name="IGNORE_ADJUSTING" value="N"/>
+                        </BindingProperty>
+                        <BindingProperty name="enabled" source="markbookPanelBean" sourcePath="${sarSelectedStudentsOnly}" target="sarSelectedStudentsList" targetPath="enabled" updateStrategy="0" immediately="false"/>
+                      </BindingProperties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="scrConfigPanel">
+              <Properties>
+                <Property name="name" type="java.lang.String" value="SCRConfig" noResource="true"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Student Curriculum">
+                    <Property name="tabTitle" type="java.lang.String" value="Student Curriculum"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="scrPushUpChildCurrResultsCheckBox" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="scrShowAllCurrItemsCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="scrShowAllProfStrandsCheckBox" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="scrGradeAggregationComboBox" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="aggregateNotAttemptedCheckBox" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                      <Component id="scrSelectedStudentsCheckBox" pref="242" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane1" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jScrollPane4" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="scrSelectedAssessItemsCheckBox" min="-2" pref="258" max="-2" attributes="0"/>
+                                              <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="scrPushUpChildCurrResultsCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="scrSelectedStudentsCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="scrSelectedAssessItemsCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="scrShowAllCurrItemsCheckBox" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="scrShowAllProfStrandsCheckBox" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="scrGradeAggregationComboBox" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="aggregateNotAttemptedCheckBox" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Component id="jScrollPane4" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane1" pref="336" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jLabel6">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="This report provides and overview of what each student has achieved in regards to the curriculum"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="scrPushUpChildCurrResultsCheckBox">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Push up child curriculum resuts"/>
+                  </Properties>
+                  <BindingProperties>
+                    <BindingProperty name="selected" source="markbookPanelBean" sourcePath="${scrPushUpChildCurriculumResults}" target="scrPushUpChildCurrResultsCheckBox" targetPath="selected" updateStrategy="0" immediately="false"/>
+                  </BindingProperties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="scrShowAllCurrItemsCheckBox">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Show *all* curriculum items"/>
+                  </Properties>
+                  <BindingProperties>
+                    <BindingProperty name="selected" source="markbookPanelBean" sourcePath="${scrUseFullCurriculumItems}" target="scrShowAllCurrItemsCheckBox" targetPath="selected" updateStrategy="0" immediately="false"/>
+                  </BindingProperties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="scrShowAllProfStrandsCheckBox">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Show *all* proficiency strands"/>
+                  </Properties>
+                  <BindingProperties>
+                    <BindingProperty name="selected" source="markbookPanelBean" sourcePath="${scrFullProficiencyStrands}" target="scrShowAllProfStrandsCheckBox" targetPath="selected" updateStrategy="0" immediately="false"/>
+                  </BindingProperties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel8">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Grade Aggregation Method:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="scrGradeAggregationComboBox">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="new DefaultComboBoxModel(AggregationMethod.values())" type="code"/>
+                    </Property>
+                  </Properties>
+                  <BindingProperties>
+                    <BindingProperty name="selectedItem" source="markbookPanelBean" sourcePath="${scrAggregationMethod}" target="scrGradeAggregationComboBox" targetPath="selectedItem" updateStrategy="0" immediately="false"/>
+                  </BindingProperties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="scrSelectedStudentsCheckBox">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Use only selected Students"/>
+                  </Properties>
+                  <BindingProperties>
+                    <BindingProperty name="selected" source="markbookPanelBean" sourcePath="${scrSelectedStudentsOnly}" target="scrSelectedStudentsCheckBox" targetPath="selected" updateStrategy="0" immediately="false"/>
+                  </BindingProperties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel10">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Students:"/>
+                  </Properties>
+                </Component>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JList" name="scrSelectedStudentsList">
+                      <BindingProperties>
+                        <BindingProperty name="elements" source="markbookPanelBean" sourcePath="${studentNames}" target="scrSelectedStudentsList" targetPath="elements" updateStrategy="0" immediately="false"/>
+                        <BindingProperty name="selectedElements" source="markbookPanelBean" sourcePath="${scrSelectedStudentNames}" target="scrSelectedStudentsList" targetPath="selectedElements" updateStrategy="0" immediately="false">
+                          <BindingParameter name="IGNORE_ADJUSTING" value="N"/>
+                        </BindingProperty>
+                        <BindingProperty name="enabled" source="markbookPanelBean" sourcePath="${scrSelectedStudentsOnly}" target="scrSelectedStudentsList" targetPath="enabled" updateStrategy="0" immediately="false"/>
+                      </BindingProperties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Component class="javax.swing.JCheckBox" name="scrSelectedAssessItemsCheckBox">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Use only selected Assessment Items"/>
+                  </Properties>
+                  <BindingProperties>
+                    <BindingProperty name="selected" source="markbookPanelBean" sourcePath="${scrSelectedAssessItemsOnly}" target="scrSelectedAssessItemsCheckBox" targetPath="selected" updateStrategy="0" immediately="false"/>
+                  </BindingProperties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="scrSelectedAssessItemsCheckBoxActionPerformed"/>
+                  </Events>
+                </Component>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JList" name="scrSelectedAssessItemsList">
+                      <BindingProperties>
+                        <BindingProperty name="elements" source="markbookPanelBean" sourcePath="${assessmentItemNames}" target="scrSelectedAssessItemsList" targetPath="elements" updateStrategy="0" immediately="false"/>
+                        <BindingProperty name="selectedElements" source="markbookPanelBean" sourcePath="${scrSelectedAssessItems}" target="scrSelectedAssessItemsList" targetPath="selectedElements" updateStrategy="0" immediately="false">
+                          <BindingParameter name="IGNORE_ADJUSTING" value="N"/>
+                        </BindingProperty>
+                        <BindingProperty name="enabled" source="markbookPanelBean" sourcePath="${scrSelectedAssessItemsOnly}" target="scrSelectedAssessItemsList" targetPath="enabled" updateStrategy="0" immediately="false"/>
+                      </BindingProperties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Component class="javax.swing.JLabel" name="jLabel13">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Assessment items:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="aggregateNotAttemptedCheckBox">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Treat &apos;not attempted&apos; as 0"/>
+                  </Properties>
+                  <BindingProperties>
+                    <BindingProperty name="selected" source="markbookPanelBean" sourcePath="${scrAggregateNotAttempted}" target="aggregateNotAttemptedCheckBox" targetPath="selected" updateStrategy="0" immediately="false"/>
+                  </BindingProperties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="sprConfigPanel">
+              <Properties>
+                <Property name="name" type="java.lang.String" value="SPRConfig" noResource="true"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Student Progress">
+                    <Property name="tabTitle" type="java.lang.String" value="Student Progress"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="sprSelectedStudentsCheckBox" alignment="0" min="-2" pref="258" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="67" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane3" pref="404" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="327" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="sprSelectedStudentsCheckBox" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                          <Component id="jScrollPane3" pref="319" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jLabel7">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="This report is intended as a feedback handout for each student."/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="sprSelectedStudentsCheckBox">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Use only selected Students"/>
+                  </Properties>
+                  <BindingProperties>
+                    <BindingProperty name="selected" source="markbookPanelBean" sourcePath="${sprSelectedStudentsOnly}" target="sprSelectedStudentsCheckBox" targetPath="selected" updateStrategy="0" immediately="false"/>
+                  </BindingProperties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel12">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Students:"/>
+                  </Properties>
+                </Component>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JList" name="sprSelectedStudentsList">
+                      <BindingProperties>
+                        <BindingProperty name="elements" source="markbookPanelBean" sourcePath="${studentNames}" target="sprSelectedStudentsList" targetPath="elements" updateStrategy="0" immediately="false"/>
+                        <BindingProperty name="selectedElements" source="markbookPanelBean" sourcePath="${sprSelectedStudentNames}" target="sprSelectedStudentsList" targetPath="selectedElements" updateStrategy="0" immediately="false">
+                          <BindingParameter name="IGNORE_ADJUSTING" value="N"/>
+                        </BindingProperty>
+                        <BindingProperty name="enabled" source="markbookPanelBean" sourcePath="${sprSelectedStudentsOnly}" target="sprSelectedStudentsList" targetPath="enabled" updateStrategy="0" immediately="false"/>
+                      </BindingProperties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JButton" name="refreshMarkbookDataButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Reload"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="refreshMarkbookDataButtonActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
